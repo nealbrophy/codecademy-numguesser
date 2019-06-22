@@ -87,6 +87,10 @@ header {
   color: #a5a5a5;
 }
 
+#computer-text {
+  color: #F7E3D4;
+}
+
 .human-guess {
   border: 1px solid #F7E3D4;
 }

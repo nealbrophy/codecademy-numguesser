@@ -18,6 +18,10 @@ guessButton.addEventListener('click', () => {
   target = generateTarget();
   // Retrieve the player's guess
   const currentHumanGuess = humanGuessInput.value;
+  if (currentHumanGuess < 0 || currentHumanGuess > 9) {
+    alert('Out of range. Please see Step 1 instructions.');
+    return;
+  }
   // Make a random 'computer guess'
   const computerGuess = Math.floor(Math.random() * 10);
 
@@ -49,6 +53,8 @@ guessButton.addEventListener('click', () => {
   // Set the correct disabled state for the buttons
   guessButton.setAttribute('disabled', true)
   nextRoundButton.removeAttribute('disabled');
+  subtractButton.setAttribute('disabled', true);
+  addButton.setAttribute('disabled', true);
 });
 
 nextRoundButton.addEventListener('click', () => {
@@ -60,6 +66,7 @@ nextRoundButton.addEventListener('click', () => {
   // Set the correct disabled state for the buttons
   nextRoundButton.setAttribute('disabled', true);
   guessButton.removeAttribute('disabled');
+  addButton.removeAttribute('disabled');
 
   // Reset the guess input box and the target number display:
   targetNumberDisplay.innerText = '?';
@@ -97,3 +104,7 @@ const handleValueChange = value => {
 humanGuessInput.addEventListener('input', function(e) {
   handleValueChange(e.target.value);
 });
+
+if (!nextRoundButton.disabled) {
+
+}
