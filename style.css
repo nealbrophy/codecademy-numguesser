@@ -190,7 +190,12 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
-.winning-text, .winning-text[disabled] {
-  color: #ec3636;
+.winning-text {
+  color: #FC7307;
+  font-weight: 700;
+} 
+
+.winning-text[disabled] {
+  color: #236AB9;
   font-weight: 700;
 }
